@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 Arial, sans-serif; }
+.app { min-height: 100vh; padding: 20px; background: #fff; color: #111; }
+.app.dark { background: #111; color: #eee; color-scheme: dark; }
+nav { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 24px; }
+a { color: inherit; }
+nav .active { color: #ff8c00; font-weight: bold; }
+h1 { font-size: 28px; margin: 0 0 24px; }
+h2 { font-size: 18px; margin: 0 0 12px; }
+p { margin: 8px 0; }
+button { border-width: 1px; padding: 8px 12px; font: inherit; }
+input, select { padding: 8px; font: inherit; max-width: 100%; }
+input:not([type=checkbox]), select { width: 100%; }
+.catalog-layout { display: grid; grid-template-columns: 200px 1fr; gap: 24px; align-items: start; }
+aside { border-radius: 4px; padding: 16px; }
+.category { display: flex; align-items: start; gap: 8px; margin: 12px 0; }
+.category input { margin-top: 5px; }
+.search-field { display: grid; gap: 4px; margin: 12px 0; }
+.cards { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+.card { padding: 16px; min-width: 0; border: 1px solid #bbb; border-radius: 4px; display: flex; flex-direction: column; }
+.dark .card { border-color: #666; }
+.card img { width: 100%; object-fit: contain; background: #fff; margin-bottom: 16px; }
+.card button { margin-top: auto; }
+.price { font-weight: bold; margin-bottom: 16px; }
+del { font-weight: normal; opacity: .65; font-size: 14px; }
+.discount { color: #a53c00; font-weight: bold; }
+.dark .discount { color: #ffad68; }
+.form { width: 350px; max-width: 100%; display: grid; gap: 12px; }
+.form label { display: grid; gap: 4px; }
+.dashboard { width: min(100%, 560px); margin: 0 auto; }
+.dashboard .form { width: 100%; border: 1px solid #ccc; border-radius: 4px; padding: 16px; margin-bottom: 16px; }
+.dark .dashboard .form { border-color: #555; }
+.checkout-form { margin-top: 16px; }
+.error { color: #bd1b1b; }
+.dark .error { color: #ff8585; }
+.success { color: #20722a; }
+.dark .success { color: #83d88b; }
+.cart-list { list-style: none; padding: 0; }
+.cart-list li { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; padding: 16px 0; }
+.cart-list img { object-fit: contain; background: #fff; }
+.cart-name { flex: 1; min-width: 180px; }
+.cart-unit-price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
+.cart-line-price { display: flex; flex-direction: column; align-items: flex-end; }
+.quantity { display: flex; align-items: center; gap: 12px; }
+.total { font-size: 22px; font-weight: bold; }
+.admin-sections { display: flex; flex-direction: column; gap: 32px; align-items: start; }
+.admin-sections section { border: 1px solid #ccc; border-radius: 4px; padding: 16px; }
+.dark .admin-sections section { border-color: #555; }
+.admin-page { width: min(100%, 560px); margin: 0 auto; }
+.admin-page .admin-sections { align-items: stretch; }
+.admin-page .form { width: 100%; }
+.admin-page .admin-search { width: calc(100% - 32px); max-width: none; }
+.admin-search { display: grid; gap: 4px; width: 350px; max-width: calc(100% - 16px); margin: 0 0 16px 16px; }
+.admin-search-results { max-width: 700px; margin: 0 0 16px 16px; }
+.admin-search-results li { margin-bottom: 8px; }
+.order-list { max-width: 700px; padding-left: 24px; }
+.order-list > li { margin-bottom: 16px; }
+.dashboard .order-list { border: 1px solid #ccc; border-radius: 4px; padding: 16px 16px 16px 40px; }
+.dark .dashboard .order-list { border-color: #555; }
+.receipt { max-width: 700px; border: 1px solid #bbb; padding: 20px; margin: 16px 0; }
+.dark .receipt { border-color: #666; }
+.receipt ul { padding-left: 24px; }
+@media (max-width: 1350px) {
+  .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 700px) {
+  .app { padding: 12px; }
+  .catalog-layout { grid-template-columns: 135px minmax(0, 1fr); gap: 12px; }
+  aside { padding: 10px; }
+  h1 { font-size: 24px; }
+}
+@media (max-width: 480px) {
+  .catalog-layout { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr; }
+}
